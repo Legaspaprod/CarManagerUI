@@ -73,7 +73,12 @@ export const useCarManager = () => {
     carManager.saveToDB();
   }, []);
 
+  const getCarById = useCallback((id: number) => {
+  return carManager.getCarById(id);
+}, []);
+
   return {
+    getCarById,
     cars,
     loading,
     addCar,
